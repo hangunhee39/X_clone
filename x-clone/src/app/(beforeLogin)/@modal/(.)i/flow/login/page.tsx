@@ -7,5 +7,3 @@ export default function Page() {
     <LoginModal />
   );
 }
-
-//패러럴 모달
