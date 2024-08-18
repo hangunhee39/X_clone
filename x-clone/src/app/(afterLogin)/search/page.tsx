@@ -1,4 +1,4 @@
-export default function Page() {
+export default function SearchPage() {
   return (
     <main>
       검색
