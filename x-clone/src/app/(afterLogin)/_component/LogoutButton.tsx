@@ -1,6 +1,7 @@
 "use client"
 
 import style from "./logoutButton.module.css";
+import Image from "next/image";
 
 export default function LogoutButton() {
     const me = {
@@ -13,11 +14,11 @@ export default function LogoutButton() {
     return(
         <button className={style.logOutButton} onClick={onLogout}>
             <div className={style.logOutUserImage}>
-                <img src={me.image} alt={me.id}/>
+                <Image src={me.image} alt="z.com 로그" width = {40} height={40}/>
             </div>
             <div className={style.logOutUserName}>
                 <div>{me.nickname}</div>
-                <div>@{me.id}</div>
+                <div>@{me.id}</div>s
             </div>
         </button>
     );
