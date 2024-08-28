@@ -1,0 +1,78 @@
+.search {
+  position: fixed;
+  height: 42px;
+  width: inherit;
+  border-radius: 21px;
+  background-color: rgb(239, 243, 244);
+  margin-top: 6px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.search svg {
+  margin-left: 20px;
+  fill: rgb(83, 100, 113);
+}
+
+.search input {
+  outline: none;
+  background-color: inherit;
+  border: none;
+  padding: 12px 2px;
+  margin-left: 5px;
+  margin-right: 12px;
+  font-size: 15px;
+  flex: 1;
+}
+
+.filterTitle {
+  background: #ffffff;
+  padding: 12px 16px;
+  color: rgba(15, 20, 25, 1);
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  border: 1px solid rgb(239, 243, 244);
+  margin-top: 12px;
+}
+
+.filterSection {
+  padding: 0 16px 12px;
+  margin-bottom: 16px;
+  border-radius: 16px;
+  border: 1px solid rgb(239, 243, 244);
+}
+
+.filterSection label {
+  font-size: 15px;
+  font-weight: bold;
+  height: 36px;
+  display: flex;
+  align-items: center;
+}
+
+.radio {
+  display: flex;
+}
+
+.radio > div {
+  flex: 1;
+}
+
+.radio input {
+    appearance: none;
+    height: 16px;
+    width: 16px;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm-1.828 13.172l-3.828-3.828 1.414-1.414L10 12.343l6.364-6.364 1.414 1.414L10.172 15.172z"/></svg>');
+    background-size: cover;
+    background-position: center;
+  }
+
+  .radio input:checked {
+    border-color: #007bff;
+    background-image: url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%2024%2024%22%3E%3Cpath%20d=%22M12%202C6.477%202%202%206.477%202%2012s4.477%2010%2010%2010%2010-4.477%2010-10S17.523%202%2012%202zm-1.828%2013.172l-3.828-3.828%201.414-1.414L10%2012.343l6.364-6.364%201.414%201.414L10.172%2015.172z%22%20fill=%22%23007bff%22/%3E%3C/svg%3E');
+    background-size: cover;
+    background-position: center;
+}

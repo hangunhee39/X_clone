@@ -66,6 +66,16 @@
 .postUserNick, .postDate {
     color: rgb(83, 100, 113);
 }
+
+.postUserId {
+    font-weight: normal;
+    color: gray;
+}
+
+.postUserId:hover {
+    text-decoration: underline;
+}
+
 .postDate:hover {
     text-decoration: underline;
 }
