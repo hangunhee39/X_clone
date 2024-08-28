@@ -13,6 +13,15 @@
 .header {
     display: flex;
     height: 53px;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    width: 600px;
+    align-items: center;
+    position: fixed;
+}
+
+.headerZone {
+    display: flex;
     align-items: center;
 }
 
@@ -23,6 +32,7 @@
 }
 
 .userZone {
+    margin-top: 56px;
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgb(239, 243, 244);

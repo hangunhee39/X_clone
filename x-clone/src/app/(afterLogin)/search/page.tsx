@@ -7,6 +7,7 @@ import Post from "@/app/(afterLogin)/_component/Post";
 type Props = {
   searchParams: { q: string, f?: string, pf?: string };
 }
+
 export default function Search({ searchParams }: Props) {
   return (
     <main className={style.main}>

@@ -3,16 +3,18 @@ import Post from "@/app/(afterLogin)/_component/Post";
 import BackButton from "@/app/(afterLogin)/_component/BackButton";
 export default function Profile() {
   const user = {
-    id: 'zerohch0',
-    nickname: '제로초',
-    image: '/5Udwvqim.jpg'
+    id: 'hgh39',
+    nickname: '한건희',
+    image: '/yRsRRjGO.jpg'
   };
 
   return (
     <main className={style.main}>
       <div className={style.header}>
-        <BackButton />
-        <h3 className={style.headerTitle}>{user.nickname}</h3>
+        <div className={style.headerZone}>
+         <BackButton />
+         <h3 className={style.headerTitle}>{user.nickname}</h3>
+        </div>
       </div>
       <div className={style.userZone}>
         <div className={style.userImage}>

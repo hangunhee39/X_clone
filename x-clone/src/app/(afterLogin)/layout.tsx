@@ -51,7 +51,7 @@ export default function AfterLoginLayout({children, modal}: Props) {
           </section>
         </div>
       </div>
-      {/* {modal} */}
+      {modal}
     </div>
   );
 }
