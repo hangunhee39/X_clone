@@ -9,7 +9,7 @@ export const handlers = [
             userId: 1,
             nickname: 'hgh',
             id: 'hgh39',
-            image: '/5Udwvqum.jpg'
+            image: '/5Udwvqum.jpgs'
         }, {
             headers: {
                 'Set-Cookie': 'connect.sid=msw-cookie;HttpOnly;Path=/'
