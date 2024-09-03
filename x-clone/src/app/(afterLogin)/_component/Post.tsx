@@ -7,34 +7,27 @@ import { ActionButtons } from "./ActionButtons";
 import PostArticle from "./PostArticle";
 import { faker } from "@faker-js/faker";
 import PostImages from "./PostImages";
+import { Post as IPost } from "@/model/Post";
 
 dayjs.extend(relativeTime);
 dayjs.locale("ko");
 
 type Props = {
   noImage?: boolean;
+  post: IPost;
 };
 
-export default function Post({ noImage }: Props) {
-  const target = {
-    postId: 1,
-    User: {
-      id: "elonmusk",
-      nickname: "일론 머스크",
-      image: "/yRsRRjGO.jpg",
-    },
-    content: "클론 코딩 어려워요₩",
-    createdAt: new Date(),
-    Images: [] as any[],
-  };
+export default function Post({ noImage, post }: Props) {
+  const target = post;
 
-  if (Math.random() > 0.5 && !noImage) {
-    target.Images.push(
-      { imageId: 1, link: faker.image.urlLoremFlickr() },
-      { imageId: 2, link: faker.image.urlLoremFlickr() },
-      { imageId: 3, link: faker.image.urlLoremFlickr() },
-    );
-  }
+  console.log("Post", post)
+  // if (Math.random() > 0.5 && !noImage) {
+  //   target.Images.push(
+  //     { imageId: 1, link: faker.image.urlLoremFlickr() },
+  //     { imageId: 2, link: faker.image.urlLoremFlickr() },
+  //     { imageId: 3, link: faker.image.urlLoremFlickr() },
+  //   );
+  // }
 
   return (
     <PostArticle post={target}>

@@ -1,23 +1,23 @@
 "use client"
 
+import { useQuery } from '@tanstack/react-query';
 import style from './followRecommned.module.css';
 import Image from 'next/image';
+import { User } from '@/model/User';
+import { getFollowRecommends } from '../_lib/getFollowRecommends';
 
-export default function FollowRecommned() {
+type Props = {
+    user: User
+}
+export default function FollowRecommned({ user }: Props) {
 
     const onFollow = () => {};
-
-    const user = {
-        id: 'elonmusk',
-        nickname: "일론 머스크",
-        image: '/yRsRRjGO.jpg',
-    }
 
     return(
         <div className={style.container}>
             <div className={style.userLogoSection}>
                 <div className={style.userLogo}>
-                    <Image src={user.image} alt={user.id} width={40} height={40}/>
+                    <img src={user.image} alt={user.id} width={40} height={40}/>
                 </div>
             </div>
             <div className={style.userInfo}>

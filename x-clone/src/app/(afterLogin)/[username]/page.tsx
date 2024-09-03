@@ -1,39 +1,41 @@
-import style from './profile.module.css';
+import style from "./profile.module.css";
 import Post from "@/app/(afterLogin)/_component/Post";
 import BackButton from "@/app/(afterLogin)/_component/BackButton";
-export default function Profile() {
-  const user = {
-    id: 'hgh39',
-    nickname: '한건희',
-    image: '/yRsRRjGO.jpg'
-  };
+import {
+  dehydrate,
+  HydrationBoundary,
+  QueryClient,
+} from "@tanstack/react-query";
+import { getUser } from "./_lib/getUser";
+import { getUserPosts } from "./_lib/getUserPosts";
+import UserPosts from "./_component/UserPosts";
+import UserInfo from "./_component/UserInfo";
 
+type Props = {
+  params: { username: string };
+};
+export default async function Profile({ params }: Props) {
+  const { username } = params;
+  const queryClient = new QueryClient();
+  await queryClient.prefetchQuery({
+    queryKey: ["user", username],
+    queryFn: getUser,
+  });
+  await queryClient.prefetchQuery({
+    queryKey: ["post", "user", username],
+    queryFn: getUserPosts,
+  });
+  const dehydratedState = dehydrate(queryClient); //서버사이드랜더링 SSR 데이터 직렬화
+
+  //데이터 복원 hydrationBoundary
   return (
     <main className={style.main}>
-      <div className={style.header}>
-        <div className={style.headerZone}>
-         <BackButton />
-         <h3 className={style.headerTitle}>{user.nickname}</h3>
+      <HydrationBoundary state={dehydratedState}> 
+        <UserInfo username={username} />
+        <div>
+          <UserPosts username={username} />
         </div>
-      </div>
-      <div className={style.userZone}>
-        <div className={style.userImage}>
-          <img src={user.image} alt={user.id}/>
-        </div>
-        <div className={style.userName}>
-          <div>{user.nickname}</div>
-          <div>@{user.id}</div>
-        </div>
-        <button className={style.followButton}>팔로우</button>
-      </div>
-      <div>
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-        <Post />
-      </div>
+      </HydrationBoundary>
     </main>
-  )
+  );
 }
